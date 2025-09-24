@@ -1,16 +1,21 @@
 package com.meuprojeto.cadastro_api.Entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    Long id;
-    String nome;
-    String email;
-    String senha;
+    private Long id;
+
+    @NotBlank(message = "Nome é obrigatorio")
+    private String nome;
+    @NotBlank(message = "Email é obrigatorio")
+    private String email;
+    @NotBlank(message = "Senha é obrigatorio")
+    private String senha;
 
     public Long getId() {
         return id;
