@@ -29,9 +29,14 @@ public class UserController {
     }
 
     @DeleteMapping("/deletar/{id}")
-    public ResponseEntity<Void> ExcluirCadastro(@PathVariable Long id){
-
+    public ResponseEntity<Void> ExcluirCadastro(@PathVariable Long id) {
         userService.ExcluirCadastro(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/editar/{id}")
+    public ResponseEntity<User> editar(@PathVariable Long id, @Valid @RequestBody User user){
+        userService.EditarCadastro(id, user);
         return ResponseEntity.ok().build();
     }
 }

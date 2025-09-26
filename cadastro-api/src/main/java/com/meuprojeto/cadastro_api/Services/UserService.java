@@ -27,6 +27,20 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    public void EditarCadastro(Long id, User user) {
+
+
+
+        if (userRepository.existsById(id)) {
+            User Existente= userRepository.findById(id).get();
+            Existente.setNome(user.getNome());
+            Existente.setEmail(user.getEmail());
+            Existente.setSenha(user.getSenha());
+            userRepository.save(Existente);
+        }
+
+    }
+
 
 
 
