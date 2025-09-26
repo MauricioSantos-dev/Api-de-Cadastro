@@ -23,10 +23,10 @@ public class UserService {
        return userRepository.findAll();
   }
 
-  public ResponseEntity<Void> ExcluirCadastro(Long id){
-    userRepository.deleteById(id);
-    return ResponseEntity.ok().build();
-  }
+    public void ExcluirCadastro(Long id) {
+        userRepository.deleteById(id);
+    }
+
 
 
 

@@ -30,6 +30,8 @@ public class UserController {
 
     @DeleteMapping("/deletar/{id}")
     public ResponseEntity<Void> ExcluirCadastro(@PathVariable Long id){
-        return userService.ExcluirCadastro(id);
+
+        userService.ExcluirCadastro(id);
+        return ResponseEntity.ok().build();
     }
 }
