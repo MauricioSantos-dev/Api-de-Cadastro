@@ -17,12 +17,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-    @PostMapping("/cadastro")
-    public User CriarUsuario(@Valid @RequestBody User user) {
-       return userService.CriarCadastro(user);
-    }
-
     @GetMapping("/listar")
     public List<User> listar() {
         return userService.listar();

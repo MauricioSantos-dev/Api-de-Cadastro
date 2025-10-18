@@ -70,7 +70,13 @@ public class User implements UserDetails {
 
     public User() {
     }
+    public User(String nome, String email, String senha, UserRole role) {
 
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.role = role;
+    }
     public User(Long id, String nome, String email, String senha, UserRole role) {
         this.id = id;
         this.nome = nome;
