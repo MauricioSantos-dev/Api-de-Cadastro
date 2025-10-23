@@ -1,8 +1,8 @@
 package com.meuprojeto.cadastro_api.Entities;
 
     public enum UserRole {
-        ADMIN("admin"),
-        USER("user");
+        ADMIN("ROLE_ADMIN"),
+        USER("ROLE_USER");
 
         private String role;
 

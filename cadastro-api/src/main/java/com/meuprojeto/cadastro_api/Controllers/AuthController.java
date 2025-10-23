@@ -1,9 +1,11 @@
 package com.meuprojeto.cadastro_api.Controllers;
 
 import com.meuprojeto.cadastro_api.Entities.AuthenticationDTO;
+import com.meuprojeto.cadastro_api.Entities.LoginResponseDTO;
 import com.meuprojeto.cadastro_api.Entities.RegisterDTO;
 import com.meuprojeto.cadastro_api.Entities.User;
 import com.meuprojeto.cadastro_api.Repositories.UserRepository;
+import com.meuprojeto.cadastro_api.infra.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,7 +23,8 @@ public class AuthController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-
+    @Autowired
+    private TokenService tokenService;
     @Autowired
     private UserRepository userRepository;
 
@@ -30,7 +33,9 @@ public class AuthController {
         var senhaUsuario= new UsernamePasswordAuthenticationToken(data.email(), data.senha());
         var   auth = authenticationManager.authenticate(senhaUsuario);
 
-        return ResponseEntity.ok().build();
+        var token= tokenService.generateToken((User)auth.getPrincipal());
+
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
 
