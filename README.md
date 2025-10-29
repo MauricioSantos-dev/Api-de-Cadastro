@@ -1,6 +1,7 @@
 Esse projeto é uma API REST desenvolvida em Spring Boot com autenticação e autorização utilizando Spring Security e JWT (JSON Web Token).
 O sistema permite o cadastro, login e autenticação segura de usuários, garantindo que apenas usuários autenticados possam acessar rotas protegidas. 
 
+
 Tecnologias Utilizadas:
 
 -Java 21
@@ -17,7 +18,8 @@ Tecnologias Utilizadas:
 
 -Maven
 
-Banco de Dados: H2
+-Banco de Dados: H2
+
 
 Conceitos Implementados:
 
