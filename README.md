@@ -4,37 +4,37 @@ O sistema permite o cadastro, login e autenticação segura de usuários, garant
 
 Tecnologias Utilizadas:
 
--Java 21
+- Java 21
 
--Spring Boot 3
+- Spring Boot 3
 
--Spring Security
+- Spring Security
 
--JWT (JSON Web Token)
+- JWT (JSON Web Token)
 
--Spring Data JPA
+- Spring Data JPA
 
--Hibernate
+- Hibernate
 
--Maven
+- Maven
 
--Banco de Dados: H2
+- Banco de Dados: H2
 
 
 Conceitos Implementados:
 
--Spring Security Configurado Manualmente: usando SecurityFilterChain
+- Spring Security Configurado Manualmente: usando SecurityFilterChain
 
--Filtro personalizado (SecurityFilter) que valida o token em todas as requisições
+- Filtro personalizado (SecurityFilter) que valida o token em todas as requisições
 
--Autenticação Stateless: sem armazenamento de sessão
+- Autenticação Stateless: sem armazenamento de sessão
 
--JWT seguro: gerado e validado pelo TokenService
+- JWT seguro: gerado e validado pelo TokenService
 
--Criptografia de senha: via BCryptPasswordEncoder
+- Criptografia de senha: via BCryptPasswordEncoder
 
--UserDetailsService customizado: (AuthorizationService) busca usuários no banco
+- UserDetailsService customizado: (AuthorizationService) busca usuários no banco
 
--DTOs: para separar a camada de domínio da camada de transporte
+- DTOs: para separar a camada de domínio da camada de transporte
 
 
