@@ -14,11 +14,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-
-    public User CriarCadastro(User user) {
-        return userRepository.save(user);
-    }
-
     public List<User> listar() {
        return userRepository.findAll();
   }
